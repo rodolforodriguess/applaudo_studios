@@ -38,26 +38,17 @@ Cypress.Commands.add('deleteCustomerByName', (customerName) => {
     cy.get(managerElements.searchCustomer)
         .should('be.visible')
         .type(customerName)
-    cy.get(managerElements.tableCustomers).first().invoke('text').then((txt) => {
+    cy.get(managerElements.tableCustomers).first().find('td').eq(0).invoke('text').then((txt) => {
         cy.wrap(txt).as('fName')
     })
-    cy.get(managerElements.tableCustomers).eq(1).invoke('text').then((txt) => {
+    cy.get(managerElements.tableCustomers).first().find('td').eq(0).invoke('text').then((txt) => {
         cy.wrap(txt).as('lName')
     })
     cy.get('@fName').then((first) => {
         cy.get('@lName').then((last) => {
-            if(`${first} ${last}` === customerName){
+            if(first === customerName){
                 cy.get(managerElements.deleteBtn).click()
             }
         })
     })
-})
-
-Cypress.Commands.add('deleteCustomer', () => { 
-    cy.get(managerElements.customersBtn)
-    .should('be.visible')
-    .click()
-    cy.get(managerElements.deleteBtn)
-        .should('be.visible')
-        .click()
 })

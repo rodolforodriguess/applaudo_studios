@@ -3,6 +3,10 @@ import { managerElements } from '../../support/elements/manager_elements'
 
 describe('Perform manager operations', () => {
 
+    const fisrtName = faker.name.firstName()
+    const lastName = faker.name.lastName()
+    const postCode = faker.address.zipCode()
+
     beforeEach(() => {
         cy.openApp()
         cy.loginManager()
@@ -10,9 +14,6 @@ describe('Perform manager operations', () => {
     })
 
     it('should create an user', () => {
-        const fisrtName = faker.name.firstName()
-        const lastName = faker.name.lastName()
-        const postCode = faker.address.zipCode()
         cy.createCustomer(fisrtName, lastName, postCode)
         cy.on('window:alert', (alert) => {
             expect(alert).to.contains('Customer added successfully with customer id :')
@@ -26,21 +27,12 @@ describe('Perform manager operations', () => {
         })
     })
 
-    it.only('should create and delete a customer', () => {
-        const fisrtName = faker.name.firstName()
-        const lastName = faker.name.lastName()
-        const postCode = faker.address.zipCode()
+    it('should create and delete a customer', () => {
         cy.createCustomer(fisrtName, lastName, postCode)
         cy.on('window:alert', (alert) => {
             expect(alert).to.contains('Customer added successfully with customer id :')
         })
-        cy.goHome()
-        cy.loginManager()
-        cy.deleteCustomer(fisrtName + " " + lastName)
-    })
-
-    it('should delete the first customer of the list', () => {
-        cy.deleteCustomer(fisrtName + " " + lastName)
-        cy.deleteCustomer()
+        cy.deleteCustomerByName(fisrtName)
+        cy.get(managerElements.tableCustomers).should('not.exist')
     })
 })
