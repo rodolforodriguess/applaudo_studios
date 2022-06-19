@@ -4,7 +4,9 @@
   "description": "cypress project for applaudo studios challenge",
   "main": "index.js",
   "scripts": {
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "run:all:chrome": "cypress run --headless -b chrome",
+    "run:all:firefox": "cypress run --headless -b firefox"
   },
   "author": "",
   "license": "ISC",

@@ -28,7 +28,7 @@ describe('Perform and check transactions', () => {
         cy.contains('Transaction successful')      
     })
 
-    it('should check a transaction in the last three hours', () => {
+    it('should check the transactions', () => {
         cy.openTransactions()
         cy.get(transactionElements.fieldsTable).should('be.visible')
         cy.get(transactionElements.resetBtn).should('be.visible')
