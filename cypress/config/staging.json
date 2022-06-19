@@ -1,5 +1,5 @@
 {   
-   "env": {
-        "url": "https://www.globalsqa.com/angularJs-protractor/BankingProject"
+   "env":{
+      "url": "https://www.globalsqa.com/angularJs-protractor/BankingProject"
    }
 }
