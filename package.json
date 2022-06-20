@@ -6,7 +6,6 @@
   "scripts": {
     "cy:open": "cypress open",
     "run:chrome": "cypress run --headless -b chrome",
-    "run:firefox": "cypress run --headless -b firefox",
     "join:json": "mochawesome-merge cypress/reports/mochawesome-report/*.json > cypress/reports/results.json",
     "generate:report": "marge cypress/reports/results.json -f report_XYZ_app -o cypress/reports --inline --showPassed",
     "report:browser": "npx http-server -p 4050 -o ./cypress/reports/report_XYZ_app.html",

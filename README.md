@@ -20,19 +20,12 @@ You must have node and npm installed. Installation guides are right below:
 ```
 2º: cd applaudo_studios && npm i
 ```
-### Choose which browser you want to run tests
-
 3-A: To run in browser chrome in headless mode
 ```
 npm run run:chrome
 ```
 
-3-B: To run in firefox in headless mode
-```
-npm run run:firefox
-```
-
-3-C: To use cypress runner just run
+3-B: To use cypress runner just run
 ```
 npm run cy:open
 ```
