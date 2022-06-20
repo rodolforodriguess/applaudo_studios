@@ -17,4 +17,11 @@ describe('Login in and log off', () => {
         cy.get(managerElements.addCustomerBtn).should('be.visible')
     })
 
+    it('Login in with customer and logout afterwards', () => {
+        cy.openCustomerLogin()
+        cy.loginCustomer('Hermoine Granger')
+        cy.logout()
+        cy.contains('Your Name')
+    })
+
 })

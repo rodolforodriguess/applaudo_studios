@@ -1,5 +1,11 @@
 import { customerElements  } from '../elements/customers_elements'
 
+Cypress.Commands.add('logout', () => { 
+    cy.get(customerElements.logoutBtn)
+        .should('be.visible')
+        .click()
+})
+
 Cypress.Commands.add('openTransactions', () => { 
     cy.get(customerElements.transactionsBtn)
         .should('be.visible')
