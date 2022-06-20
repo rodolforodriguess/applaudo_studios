@@ -1,6 +1,6 @@
 # ABOUT...
 
-This project uses Cypress IO 9.7.0 version as testing framework
+This project uses Cypress IO with 9.7.0 version as testing framework and mochawesome to generate test reports
 
 You must have node and npm installed. Installation guides are right below:
 
@@ -9,7 +9,7 @@ You must have node and npm installed. Installation guides are right below:
 [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 
-## Manual Setup
+## Setup
 
 ### Git clone the project
 ```
@@ -20,16 +20,16 @@ You must have node and npm installed. Installation guides are right below:
 ```
 2º: cd applaudo_studios && npm i
 ```
-### Choose browser you want to run tests
+### Choose which browser you want to run tests
 
 3-A: To run in browser chrome in headless mode
 ```
-npm run run:all:chrome
+npm run run:chrome
 ```
 
-3-B: To run in browser firefox in headless mode
+3-B: To run in firefox in headless mode
 ```
-npm run run:all:firefox
+npm run run:firefox
 ```
 
 3-C: To use cypress runner just run
@@ -43,3 +43,5 @@ npm run cy:open
 ```
 npm run posttest
 ```
+>A html file is expected to open in your default browser. To do so, a temporary server is created by a npm script in your local machine. You can terminate it by pressing CTRL + C in the command line
+where the server is opened

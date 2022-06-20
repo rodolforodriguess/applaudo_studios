@@ -13,7 +13,6 @@ describe('Login in and log off', () => {
     })
 
     it('Login in with manager account', () => {
-        cy.openCustomerLogin()
         cy.loginManager()
         cy.get(managerElements.addCustomerBtn).should('be.visible')
     })
