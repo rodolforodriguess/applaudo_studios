@@ -32,6 +32,11 @@ npm run run:all:chrome
 npm run run:all:firefox
 ```
 
+3-C: To use cypress runner just run
+```
+npm run cy:open
+```
+
 >These commands will run all test scenarios in the browser chosen in background
 
 ### If you want to generate a mochawesome test report, run:

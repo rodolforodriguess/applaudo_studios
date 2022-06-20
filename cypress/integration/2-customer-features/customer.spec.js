@@ -5,6 +5,7 @@ describe('Perform and check transactions', () => {
 
     beforeEach(() => {
         cy.openApp()
+        cy.openCustomerLogin()
         cy.loginCustomer('Hermoine Granger')
         cy.get(customerElements.transactionsBtn).should('be.visible') 
     })

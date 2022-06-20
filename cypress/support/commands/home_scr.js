@@ -6,10 +6,13 @@ Cypress.Commands.add('openApp', () => {
     cy.title().should('eq', 'XYZ Bank') 
 })
 
-Cypress.Commands.add('loginCustomer', (customerName) => { 
+Cypress.Commands.add('openCustomerLogin', () => {
     cy.get(homeElements.customerBtn)
-        .should('be.visible')
-        .click()
+    .should('be.visible')
+    .click()
+})
+
+Cypress.Commands.add('loginCustomer', (customerName) => { 
     cy.get(customerElements.selectCombo).select(customerName)
     cy.get(customerElements.loginBtn)
         .should('be.visible')
